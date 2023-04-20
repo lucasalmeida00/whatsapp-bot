@@ -1,6 +1,6 @@
-import { Client, MessageMedia, LocalAuth } from 'whatsapp-web.js';
-import * as qrcode from 'qrcode-terminal';
 import { resolve } from 'path';
+import * as qrcode from 'qrcode-terminal';
+import { Client, LocalAuth, MessageMedia } from 'whatsapp-web.js';
 
 const client = new Client({
   authStrategy: new LocalAuth({
@@ -18,10 +18,10 @@ client.on('authenticated', () => console.log('WhatsApp authenticated.'));
 client.on('auth_failure', () => console.log('WhatsApp authentication failed.'));
 client.on('disconnected', () => console.log('WhatsApp lost connection.'));
 client.on('ready', async () => {
-  await client.sendMessage(
-    '5511999865802@c.us',
-    `[${client.info.pushname}] - WhatsApp Online\n\n[⭐] Please *like* this project: https://github.com/caioagiani/whatsapp-bot\n\n[💝] Sponsor this SourceCode: https://github.com/sponsors/caioagiani`,
-  );
+  // await client.sendMessage(
+  //   '5511999865802@c.us',
+  //   `[${client.info.pushname}] - WhatsApp Online\n\n[⭐] Please *like* this project: https://github.com/caioagiani/whatsapp-bot\n\n[💝] Sponsor this SourceCode: https://github.com/sponsors/caioagiani`,
+  // );
 
   console.log('WhatsApp bot successfully connected!');
 });
